@@ -1,0 +1,38 @@
+.container {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .container {width: 540px;}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .container {width: 720px;}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .container {width: 960px;}
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .container {width: 1140px;}
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+    .container {width: 1320px}
+}
+
+button {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.29);
+    cursor: pointer;
+    align-self: flex-end;
+    width: 150px;
+    border-radius: 5px;
+}

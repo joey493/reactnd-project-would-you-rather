@@ -1,0 +1,39 @@
+.sign-in {
+    max-width: 550px;
+    margin: 0 auto;
+    border: 1px solid #dad7d7;
+    border-radius: 3px;
+
+    header {background-color: #dad7d7; text-align: center;}
+
+    .sign-form {
+        padding: 15px 15px 30px 15px; /* edit */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        p {
+            color: #2fbea4;
+            font: {
+                size: 1.2rem;
+                weight: bold;
+            }
+        }
+
+        select{
+            width:60%;
+            padding: 15px;
+            margin-bottom:20px;
+            display: block;
+            border: none;
+            border-bottom: 3px solid #2fbea4;
+            font: {
+                size: 1.2rem;
+                style: italic;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
