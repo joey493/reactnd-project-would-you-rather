@@ -30,7 +30,7 @@ export class QuestionPage extends Component {
         return (
             <div className='question'>
                 {!question
-                    ? <div>hello bitch</div>
+                    ? <div>Not found 404</div>
                     : answered || alreadyAnswered
                         ? <AnsweredQ question={question} user={user} />
                         : <>
