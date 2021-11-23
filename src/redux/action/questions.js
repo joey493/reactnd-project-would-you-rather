@@ -1,4 +1,4 @@
-import { saveQuestionAnswer, saveQuestion } from '../../utils/api'
+import { _saveQuestionAnswer, _saveQuestion } from '../../utils/_DATA'
 
 export const GET_QUSTIONS = 'GET_QUSTIONS'
 export const SAVE_ANSWER = 'SAVE_ANSWER'
@@ -12,9 +12,9 @@ export const getQuestions = (questions) => ({
 
 const saveAnswer = ({ authedUser, qid, answer }) => ({
     type: SAVE_ANSWER,
-    answer,
     authedUser,
-    qid
+    qid,
+    answer
 })
 
 
@@ -26,7 +26,7 @@ export const saveQuestionAction = (question) => ({
 
 export const handleSaveAnswer = ({ authedUser, qid, answer }) => ( // _saveQuestionAnswer ({ authedUser, qid, answer })
     (dispatch) => {
-        saveQuestionAnswer({ authedUser, qid, answer })
+        _saveQuestionAnswer({ authedUser, qid, answer })
         .then(() => {
             dispatch(saveAnswer({ authedUser, qid, answer }))
         })
@@ -35,7 +35,7 @@ export const handleSaveAnswer = ({ authedUser, qid, answer }) => ( // _saveQuest
 
 export const handleSaveQuestion = (question) => ( // _saveQuestion (question) 
     (dispatch) => {
-        saveQuestion(question).then((_question) => {
+        _saveQuestion(question).then((_question) => {
             dispatch(saveQuestionAction(_question))
         })
     }

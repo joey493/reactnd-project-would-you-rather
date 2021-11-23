@@ -19,14 +19,12 @@ export class QuestionPage extends Component {
 
         dispatch(handleSaveAnswer({ authedUser: currentUser, qid: question_id, answer }))
         this.setState({ answered: true })
-
     }
 
     render() {
         const { question, user, question_id, users, currentUser } = this.props
         const { answered } = this.state
         const alreadyAnswered = Object.keys(users[currentUser].answers).includes(question_id)
-
         return (
             <div className='question'>
                 {!question
@@ -37,7 +35,7 @@ export class QuestionPage extends Component {
                             <div className='user'>
                                 <img
                                     src={require(`../../utils/icons/${user.avatarURL}`).default}
-                                    alt={user.id} /> {/* i will change it */}
+                                    alt={user.id} />
                                 <span className='userName'>{user.name}</span>
                             </div>
 

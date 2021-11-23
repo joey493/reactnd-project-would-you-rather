@@ -11,12 +11,15 @@ const question = (state = {}, action) => {
             }
         case SAVE_ANSWER: 
             const {qid, answer, authedUser} = action
-
+            console.log('done')
             return {
                 ...state,
-                [answer]: {
-                    ...state[qid][answer],
-                    votes: state[qid][answer].votes.concat(authedUser)
+                [qid]: {
+                    ...state[qid],
+                    [answer]: {
+                        votes: state[qid][answer].votes.concat(authedUser),
+                        ...state[qid][answer]
+                    }
                 }
             }
         case SAVE_QUESTION:

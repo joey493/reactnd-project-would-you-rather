@@ -29,7 +29,7 @@ export class Question extends Component {
 
 const mapStateToProps = ({ questions, users, currentUser }, { id }) => {
     const question = questions[id]
-
+    
     return {
         question,
         user: users[question.author],

@@ -10,7 +10,6 @@ export class AnsweredQ extends Component {
 
         const votesOnePerc = ((optionOneVotes / votes) * 100)
         const votesTwoPerc = 100 - votesOnePerc;
-
         return (
             <>
                 <div className='user'>

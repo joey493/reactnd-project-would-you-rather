@@ -21,8 +21,8 @@ export class Navbar extends Component {
                         <div className="user">
                             <span className='avatar'>
                                 <img
-                                    src={require(`../../utils/icons/${user.avatarURL}`).default} // what is require()
-                                    alt={user.id} /> {/* i will change it */}
+                                    src={require(`../../utils/icons/${user.avatarURL}`).default}
+                                    alt={user.id} /> 
                             </span>
                             <span className="userName">{user.name}</span>
                             <span className="logout" onClick={() => dispatch(LogOut())}></span>

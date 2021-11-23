@@ -14,10 +14,3 @@ export const getInitialData = () => (
         questions
     }))
 )
-
-// _saveQuestionAnswer ({ authedUser, qid, answer })
-export const saveQuestionAnswer = (info) => _saveQuestionAnswer(info)
-
-
-// _saveQuestion (question) 
-export const saveQuestion = (question) => _saveQuestion (question) 

@@ -20,8 +20,6 @@ export class NewQ extends Component {
         dispatch(handleSaveQuestion({ optionOneText, optionTwoText, author: currentUser }))
 
         this.setState({
-            optionOneText: '',
-            optionTwoText: '',
             toHome: true
         })
     }
