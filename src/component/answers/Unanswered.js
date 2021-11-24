@@ -18,12 +18,11 @@ export class Unanswered extends Component {
     }
 }
 
-const mapStateToProps = ({ users, questions, currentUser }) => {
-    const user = users[currentUser]
+const mapStateToProps = ({ questions, currentUser }) => {
     const questionIds = Object.keys(questions)
 
     return {
-        unanswered: questionIds.filter(qId => !Object.keys(user.answers).includes(qId))
+        unanswered: questionIds.filter(qId => !Object.keys(currentUser.answers).includes(qId))
     }
 }
 

@@ -17,14 +17,14 @@ export class QuestionPage extends Component {
         const { currentUser, question_id, dispatch } = this.props
         const { answer } = this.state
 
-        dispatch(handleSaveAnswer({ authedUser: currentUser, qid: question_id, answer }))
+        dispatch(handleSaveAnswer({ authedUser: currentUser.id, qid: question_id, answer }))
         this.setState({ answered: true })
     }
 
     render() {
-        const { question, user, question_id, users, currentUser } = this.props
+        const { question, user, question_id, currentUser } = this.props
         const { answered } = this.state
-        const alreadyAnswered = Object.keys(users[currentUser].answers).includes(question_id)
+        const alreadyAnswered = Object.keys(currentUser.answers).includes(question_id)
         return (
             <div className='question'>
                 {!question
@@ -62,7 +62,6 @@ const mapStateToProps = ({ questions, users, currentUser }, props) => {
         question,
         user: question && users[question.author],
         currentUser,
-        users,
         question_id
     }
 }

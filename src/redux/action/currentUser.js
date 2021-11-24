@@ -1,9 +1,9 @@
 export const CURRENT_USER = 'CURRENT_USER'
 export const LOG_OUT = 'LOG_OUT'
 
-export const setCurrentUser = (id) => ({
+export const setCurrentUser = (user) => ({
     type: CURRENT_USER,
-    payload: id
+    payload: user
 })
 
 export const LogOut = () => ({

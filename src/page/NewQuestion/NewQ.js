@@ -17,7 +17,7 @@ export class NewQ extends Component {
         const { optionOneText, optionTwoText } = this.state
         const { dispatch, currentUser } = this.props
 
-        dispatch(handleSaveQuestion({ optionOneText, optionTwoText, author: currentUser }))
+        dispatch(handleSaveQuestion({ optionOneText, optionTwoText, author: currentUser.id }))
 
         this.setState({
             toHome: true

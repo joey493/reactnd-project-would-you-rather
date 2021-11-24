@@ -16,7 +16,7 @@ export class SignIn extends Component {
     }
 
     handleSubmit = () => {
-        this.props.dispatch(setCurrentUser(this.state.userId))
+        this.props.dispatch(setCurrentUser(this.props.users[this.state.userId]))
     }
 
     render() {

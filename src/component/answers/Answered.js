@@ -20,12 +20,11 @@ export class Answered extends Component {
     }
 }
 
-const mapStateToProps = ({ users, questions, currentUser }) => {
-    const user = users[currentUser]
+const mapStateToProps = ({ questions, currentUser }) => {
     const questionIds = Object.keys(questions)
 
     return {
-        answered: questionIds.filter(qId => Object.keys(user.answers).includes(qId))
+        answered: questionIds.filter(qId => Object.keys(currentUser.answers).includes(qId))
     }
 }
 export default connect(mapStateToProps)(Answered)

@@ -4,12 +4,12 @@ export class AnsweredQ extends Component {
     render() {
         const { question, user } = this.props
 
-        const optionOneVotes = question.optionOne.votes.length
-        const optionTwoVotes = question.optionTwo.votes.length
-        const votes = optionOneVotes + optionTwoVotes;
+        let optionOneVotes = question.optionOne.votes.length
+        let optionTwoVotes = question.optionTwo.votes.length
+        let votes = optionOneVotes + optionTwoVotes || 1;
 
-        const votesOnePerc = ((optionOneVotes / votes) * 100)
-        const votesTwoPerc = 100 - votesOnePerc;
+        let votesOnePerc = Math.round((optionOneVotes / votes) * 100)
+        let votesTwoPerc = 100 - votesOnePerc;
         return (
             <>
                 <div className='user'>
@@ -21,8 +21,8 @@ export class AnsweredQ extends Component {
                 <div className="content">
                     <p>Would You Rather...</p>
                     <div className="options">
-                        <p>{question.optionOne.text} || {optionOneVotes} || {votesOnePerc}%</p><br />
-                        <p>{question.optionTwo.text} || {optionTwoVotes} || {votesTwoPerc}%</p>
+                        <p>{question.optionOne.text} | {optionOneVotes} | {votesOnePerc}%</p><br />
+                        <p>{question.optionTwo.text} | {optionTwoVotes} | {votesTwoPerc}%</p>
                     </div>
                 </div>
             </>

@@ -8,7 +8,7 @@ import './Navbar.scss'
 export class Navbar extends Component {
     render() {
         const { user, dispatch } = this.props
-
+        
         return (
             <header>
                 <div className="container">
@@ -34,6 +34,6 @@ export class Navbar extends Component {
     }
 }
 
-const mapStateToProps = ({ currentUser, users }) => ({ user: currentUser ? users[currentUser] : null })
+const mapStateToProps = ({ currentUser }) => ({ user: currentUser ? currentUser : null })
 
 export default connect(mapStateToProps)(Navbar)

@@ -11,7 +11,6 @@ const question = (state = {}, action) => {
             }
         case SAVE_ANSWER: 
             const {qid, answer, authedUser} = action
-            console.log('done')
             return {
                 ...state,
                 [qid]: {
