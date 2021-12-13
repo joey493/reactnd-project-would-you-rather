@@ -3,8 +3,8 @@ import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 import handleInitialData from './redux/action'
-import Navbar from './component/navbar/Navbar'
-import SignIn from './page/SignIn/SignIn'
+import Navbar from './component/Navbar'
+import SignIn from './page/SignIn'
 import Home from './page/Home/Home';
 import NewQ from './page/NewQuestion/NewQ';
 import Leaderboard from './page/LeaderBoard/Leaderboard'

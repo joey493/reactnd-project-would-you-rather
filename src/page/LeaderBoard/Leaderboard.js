@@ -14,7 +14,7 @@ class LeaderBoard extends Component {
 
                         <div key={id} className='leader'>
                             <img
-                                src={require(`../../utils/icons/${avatarURL}`).default} // what is require()
+                                src={avatarURL}
                                 alt={id} />
                             <div className='content'>
                                 <h3 className="user">{name}</h3>

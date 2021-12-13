@@ -1,7 +1,8 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { setCurrentUser } from '../../redux/action/currentUser'
-import './SignIn.scss'
+import { setCurrentUser } from '../redux/action/currentUser'
+// import './SignIn.scss'
+
 export class SignIn extends Component {
     state = {
         userId: '',
@@ -23,19 +24,21 @@ export class SignIn extends Component {
         const { userIds, users } = this.props
 
         return (
-            <div className='sign-in'>
+            <div className='border-main-color border-2 mx-auto my-16 w-40em text-center p-6 rounded-md'>
                 <header>
-                    <h3>Welcome to the Would You Rather App</h3>
+                    <h1 className='text-2xl font-bold'>Welcome to Would You Rather</h1>
                 </header>
-                <div className="sign-form" onSubmit={this.handleSubmit}>
-                    <p>SignIn to continue</p>
-                    <select className="dropmenu" onChange={this.handleChange}>
+                <p className='p-8 font-bold'>SignIn to continue</p>
+                <div className="flex justify-evenly" onSubmit={this.handleSubmit}>
+                    <select className="px-4 py-2 border-2 border-main-color rounded-md" onChange={this.handleChange}>
                         <option value="none">Select a User</option>
                         {userIds.map((userId) => (
                             <option key={userId} value={userId}>{users[userId].name}</option>
                         ))}
                     </select>
-                    <button disabled={this.state.userId === '' ? true : false} onClick={this.handleSubmit}>Sign In</button>
+                    <button className='border-2 border-main-color px-4 py-2 rounded-md uppercase font-bold text-white bg-main-color cursor-pointer
+                        disabled:bg-disabled hover:text-main-color hover:bg-white custom-transition'
+                        disabled={this.state.userId === '' ? true : false} onClick={this.handleSubmit}>Sign In</button>
                 </div>
             </div>
         )

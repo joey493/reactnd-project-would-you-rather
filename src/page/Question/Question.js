@@ -34,7 +34,7 @@ export class QuestionPage extends Component {
                         : <>
                             <div className='user'>
                                 <img
-                                    src={require(`../../utils/icons/${user.avatarURL}`).default}
+                                    src={user.avatarURL}
                                     alt={user.id} />
                                 <span className='userName'>{user.name}</span>
                             </div>
