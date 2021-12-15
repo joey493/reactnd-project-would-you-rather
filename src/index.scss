@@ -57,7 +57,7 @@ html {
 }
 
 .question {
-  @apply set-border max-w-xl mx-auto my-4;
+  @apply set-border max-w-xl md:mx-auto mx-4 my-4;
 
   header {
     @apply border-b-2 border-main-color flex items-center px-4 py-2 gap-4;

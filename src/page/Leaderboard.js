@@ -9,18 +9,20 @@ class LeaderBoard extends Component {
         return (
             <div className='main p-4'>
                     {leaders.map(({ id, avatarURL, name, answers, questions }) => (
-                        <div key={id} className='flex  my-6 gap-x-12 p-6 justify-center items-center set-border'>
+                        <div key={id} className='flex flex-col md:flex-row my-6 gap-x-12 p-6 justify-center items-center set-border'>
                             <img className='w-32 h-32 rounded-full'
                                 src={avatarURL}
                                 alt={id} />
-                            <div className='px-16'>
-                                <h3 className="user">{name}</h3>
-                                <p>Answered Questions <span>{Object.keys(answers).length}</span></p>
-                                <p>Created Questions <span>{questions.length}</span></p>
-                            </div>
-                            <div className="score">
-                                <h3>Score</h3>
-                                <p class='text-center'>{Object.keys(answers).length + questions.length}</p>
+                            <div className='flex-1 flex justify-between md:gap:0 gap-16 items-center'>
+                                <div>
+                                    <h3 className="text-main-color">{name}</h3>
+                                    <p>Answered Questions: <span className="text-main-color">{Object.keys(answers).length}</span></p>
+                                    <p>Created Questions: <span className="text-main-color">{questions.length}</span></p>
+                                </div>
+                                <div className="score">
+                                    <h3>Score</h3>
+                                    <p class='text-center text-main-color'>{Object.keys(answers).length + questions.length}</p>
+                                </div>
                             </div>
                         </div>
                     ))}
