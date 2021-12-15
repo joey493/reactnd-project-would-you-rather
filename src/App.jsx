@@ -5,12 +5,11 @@ import { connect } from 'react-redux';
 import handleInitialData from './redux/action'
 import Navbar from './component/Navbar'
 import SignIn from './page/SignIn'
-import Home from './page/Home/Home';
-import NewQ from './page/NewQuestion/NewQ';
-import Leaderboard from './page/LeaderBoard/Leaderboard'
-import QuestionPage from './page/Question/Question';
+import Home from './page/Home';
+import NewQ from './page/NewQ';
+import Leaderboard from './page/Leaderboard'
+import QuestionPage from './page/Question';
 
-import './App.scss';
 
 class App extends Component {
   componentDidMount() {

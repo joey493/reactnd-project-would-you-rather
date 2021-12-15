@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { handleSaveQuestion } from '../../redux/action/questions'
+import { handleSaveQuestion } from '../redux/action/questions'
 import { Redirect } from 'react-router-dom'
-// Navigate
+
 export class NewQ extends Component {
     state = {
         optionOneText: '',
@@ -32,19 +32,13 @@ export class NewQ extends Component {
         }
 
         return (
-            <div className='question'>
-                <div className='user'>
-                    <span className='avatar'></span>
-                    <span className='userName'>userName</span>
-                </div>
-                <div className='content'>
-                    <p>Would You Rather...</p>
-                    {/* options */}
-                    <input className='option' placeholder='Option 1' onChange={this.handleOptionOne} />
-                    <p>Or</p>
-                    <input className='option' placeholder='Option 2' onChange={this.handleOptionTwo} />
-                    <button onClick={this.handleSubmit} disabled={optionOneText === '' || optionTwoText === ''}>Submit</button>
-                </div>
+            <div className='main p-8 flex flex-col items-center'>
+                <h2 className='font-bold text-lg mb-8'>Would You Rather...</h2>
+                {/* options */}
+                <input className='set-border w-full px-4 py-2' placeholder='Option 1' onChange={this.handleOptionOne} />
+                <p className='font-bold text-lg my-6'>Or</p>
+                <input className='set-border w-full px-4 py-2' placeholder='Option 2' onChange={this.handleOptionTwo} />
+                <button className='mt-6 mx-auto btn' onClick={this.handleSubmit} disabled={optionOneText === '' || optionTwoText === ''}>Submit</button>
             </div>
         )
     }

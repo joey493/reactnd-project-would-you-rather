@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import './Leaderboard.scss';
 
 class LeaderBoard extends Component {
     render() {
@@ -8,26 +7,23 @@ class LeaderBoard extends Component {
         const { leaders } = this.props
 
         return (
-            <div className='leader-board'>
-                <div className="container">
+            <div className='main p-4'>
                     {leaders.map(({ id, avatarURL, name, answers, questions }) => (
-
-                        <div key={id} className='leader'>
-                            <img
+                        <div key={id} className='flex  my-6 gap-x-12 p-6 justify-center items-center set-border'>
+                            <img className='w-32 h-32 rounded-full'
                                 src={avatarURL}
                                 alt={id} />
-                            <div className='content'>
+                            <div className='px-16'>
                                 <h3 className="user">{name}</h3>
                                 <p>Answered Questions <span>{Object.keys(answers).length}</span></p>
                                 <p>Created Questions <span>{questions.length}</span></p>
                             </div>
                             <div className="score">
                                 <h3>Score</h3>
-                                <p>{Object.keys(answers).length + questions.length}</p>
+                                <p class='text-center'>{Object.keys(answers).length + questions.length}</p>
                             </div>
                         </div>
                     ))}
-                </div>
             </div>
         )
     }

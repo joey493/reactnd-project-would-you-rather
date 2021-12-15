@@ -24,23 +24,22 @@ export class SignIn extends Component {
         const { userIds, users } = this.props
 
         return (
-            <div className='border-main-color border-2 mx-auto my-16 w-40em text-center p-6 rounded-md'>
+            <main className=' main text-center p-6'>
                 <header>
                     <h1 className='text-2xl font-bold'>Welcome to Would You Rather</h1>
                 </header>
                 <p className='p-8 font-bold'>SignIn to continue</p>
                 <div className="flex justify-evenly" onSubmit={this.handleSubmit}>
-                    <select className="px-4 py-2 border-2 border-main-color rounded-md" onChange={this.handleChange}>
+                    <select className="px-4 py-2 set-border bg-white" onChange={this.handleChange}>
                         <option value="none">Select a User</option>
                         {userIds.map((userId) => (
                             <option key={userId} value={userId}>{users[userId].name}</option>
                         ))}
                     </select>
-                    <button className='border-2 border-main-color px-4 py-2 rounded-md uppercase font-bold text-white bg-main-color cursor-pointer
-                        disabled:bg-disabled hover:text-main-color hover:bg-white custom-transition'
+                    <button className='btn'
                         disabled={this.state.userId === '' ? true : false} onClick={this.handleSubmit}>Sign In</button>
                 </div>
-            </div>
+            </main>
         )
     }
 }

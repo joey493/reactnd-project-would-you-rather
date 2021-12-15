@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.main-nav {
+  @apply px-6 py-4 text-main-color font-bold relative overflow-hidden flex items-center
+    before:content-[''] before:absolute before:z-1 before:bottom-0 before:left-0
+    before:w-full before:h-full before:translate-y-[101%] before:bg-main-color
+    before:custom-transition hover:before:translate-y-0 hover:text-white 
+}
+
+html {
+  @apply md:text-root text-sm-root
+}
+
+.main-active-nav {
+  @apply italic border-b-2
+}
+
+.custom-transition {
+  @apply transition-all duration-500
+}
+
+.set-border {
+  @apply border-2 border-main-color rounded-md
+}
+.home-nav {
+  @apply px-4 py-4 text-center text-xl flex-1 
+    border-b-2 border-main-color
+}
+.avatar {
+  @apply h-12 rounded-full
+}
+
+.main {
+  @apply mx-auto my-16 md:w-40em set-border w-95
+}
+
+.btn {
+  @apply set-border px-4 py-2 uppercase font-bold text-white bg-main-color cursor-pointer
+    disabled:bg-disabled hover:text-main-color hover:bg-white custom-transition
+}
+
+.question {
+  @apply set-border max-w-xl mx-auto my-4;
+
+  header {
+    @apply border-b-2 border-main-color flex items-center px-4 py-2 gap-4;
+
+    img {
+      @apply avatar;
+    }
+    h3 {
+      @apply font-bold;
+    }
+  }
+
+  div {
+    @apply px-4 py-2;
+
+    h5 {
+      @apply font-bold text-lg;
+    }
+  }
+}

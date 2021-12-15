@@ -1,21 +1,19 @@
 import { connect } from 'react-redux'
 import { Component } from 'react'
-import Question from '../question/Question'
+import Question from './Question'
 
 
 export class Answered extends Component {
     render() {
         const { answered } = this.props
         return (
-            <div>
-                <ul>
-                    {answered.map((id) => (
-                        <li key={id}>
-                            <Question id={id} />
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <ul className='my-8'>
+                {answered.map((id) => (
+                    <li key={id}>
+                        <Question id={id} />
+                    </li>
+                ))}
+            </ul>
         )
     }
 }

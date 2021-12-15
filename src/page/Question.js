@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import AnsweredQ from '../../component/question/AnsweredQ'
-import { handleSaveAnswer } from '../../redux/action/questions'
+import AnsweredQ from '../component/AnsweredQ'
+import { handleSaveAnswer } from '../redux/action/questions'
 
 export class QuestionPage extends Component {
     state = {
@@ -26,30 +26,30 @@ export class QuestionPage extends Component {
         const { answered } = this.state
         const alreadyAnswered = Object.keys(currentUser.answers).includes(question_id)
         return (
-            <div className='question'>
+            <div>
                 {!question
                     ? <div>Not found 404</div>
                     : answered || alreadyAnswered
                         ? <AnsweredQ question={question} user={user} />
-                        : <>
-                            <div className='user'>
-                                <img
+                        : <div className='question'>
+                            <header>
+                                <img className='avatar'
                                     src={user.avatarURL}
                                     alt={user.id} />
-                                <span className='userName'>{user.name}</span>
-                            </div>
+                                <h3 className='userName'>{user.name}</h3>
+                            </header>
 
-                            <div className="content">
-                                <p>Would You Rather...</p>
-                                <div className="options" onChange={this.handleChange}>
-                                    <input type='radio' name='option' value='optionOne' id='optionOne' />
+                            <div className='text-center'>
+                                <h5>Would You Rather...</h5>
+                                <div className="text-left my-6 text-lg italic" onChange={this.handleChange}>
+                                    <input class='mr-4 mb-4' type='radio' name='option' value='optionOne' id='optionOne' />
                                     <label htmlFor='optionOne'>{question.optionOne.text}</label><br />
-                                    <input type='radio' name='option' value='optionTwo' id='optionTwo' />
+                                    <input class='mr-4' type='radio' name='option' value='optionTwo' id='optionTwo' />
                                     <label htmlFor='optionTwo'>{question.optionTwo.text}</label>
                                 </div>
-                                <button disabled={this.state.answer === '' ? true : false} onClick={this.handleClick}>Submit</button>
+                                <button class='btn' disabled={this.state.answer === '' ? true : false} onClick={this.handleClick}>Submit</button>
                             </div>
-                        </>
+                        </div>
                 }
             </div>
         )

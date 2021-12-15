@@ -11,21 +11,21 @@ export class AnsweredQ extends Component {
         let votesOnePerc = Math.round((optionOneVotes / votes) * 100)
         let votesTwoPerc = 100 - votesOnePerc;
         return (
-            <>
-                <div className='user'>
+            <main className='question'>
+                <header className='user'>
                     <img
                         src={user.avatarURL}
                         alt={user.id} />
-                    <span className='userName'>{user.name}</span>
-                </div>
+                    <h3 className='userName'>{user.name}</h3>
+                </header>
                 <div className="content">
-                    <p>Would You Rather...</p>
+                    <h5 className='text-center py-6'>Would You Rather...</h5>
                     <div className="options">
                         <p>{question.optionOne.text} | {optionOneVotes} | {votesOnePerc}%</p><br />
                         <p>{question.optionTwo.text} | {optionTwoVotes} | {votesTwoPerc}%</p>
                     </div>
                 </div>
-            </>
+            </main>
         )
     }
 }

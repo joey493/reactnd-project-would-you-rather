@@ -1,13 +1,13 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import Question from '../question/Question'
+import Question from './Question'
 
 export class Unanswered extends Component {
     render() {
         const { unanswered } = this.props
         
         return (
-            <ul>
+            <ul className='my-8'>
                 {unanswered.map((id) => (
                     <li key={id}>
                         <Question id={id} />

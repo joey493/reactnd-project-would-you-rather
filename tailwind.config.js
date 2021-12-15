@@ -24,8 +24,16 @@ module.exports = {
         '20': '5rem'
       },
       width: {
-        '40em': '40em'
-      }
+        '40em': '40em',
+        '95': '95%'
+      },
+      borderLeftWidth: {
+        '1': '1px'
+      },
+      fontSize: {
+        'root': '16px',
+        'sm-root': '11px'
+      },
     },
   },
   plugins: [],
