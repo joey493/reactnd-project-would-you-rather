@@ -1,3 +1,6 @@
+import { MdLeaderboard } from 'react-icons/md'
+import { FaHome, FaPlus } from 'react-icons/fa'
+
 let users = {
   sarahedo: {
     id: 'sarahedo',
@@ -114,6 +117,24 @@ let questions = {
     }
   },
 }
+
+export let navData = [
+  {
+      title: 'Home',
+      icon: <FaHome/>,
+      path: '/home'
+  },
+  {
+      title: 'New Question',
+      icon: <FaPlus/>,
+      path: '/add'
+  },
+  {
+      title: 'Leader Board',
+      icon: <MdLeaderboard/>,
+      path: '/leaderboard'
+  }
+]
 
 function generateUID () {
   return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)

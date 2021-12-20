@@ -1,6 +1,6 @@
-import { Component } from 'react';
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
-import { connect } from 'react-redux';
+import { useEffect } from 'react';
+import { Route, Switch, Redirect, useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
 
 import handleInitialData from './redux/action'
 import Navbar from './component/Navbar'
@@ -10,19 +10,19 @@ import NewQ from './page/NewQ';
 import Leaderboard from './page/Leaderboard'
 import QuestionPage from './page/Question';
 
+const App = () => {
+  const dispatch = useDispatch()
+  const location = useLocation()
+  const currentUser = useSelector(state => state.currentUser)
 
-class App extends Component {
-  componentDidMount() {
-    this.props.dispatch(handleInitialData())
-  }
+  useEffect(() => {
+    dispatch(handleInitialData())
+  })
 
-
-  render() {
-    const { currentUser, location } = this.props
-    if (location.pathname === '/' || location.pathname === '/home') return <Redirect to='/home/unanswered' />
-
-    return (
-      <div>
+  return (
+    <>{location.pathname === '/' || location.pathname === '/home'
+      ? <Redirect to='/home/unanswered' />
+      : <div>
         <Navbar />
         {currentUser === null ? <SignIn />
           : <Switch>
@@ -33,10 +33,9 @@ class App extends Component {
           </Switch>
         }
       </div>
-    )
-  }
+
+    }</>
+  )
 }
 
-const mapStateToProps = ({ currentUser }) => ({ currentUser })
-
-export default withRouter(connect(mapStateToProps)(App))
+export default App
