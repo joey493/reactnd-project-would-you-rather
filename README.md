@@ -25,7 +25,7 @@ Second project at Advanced Front-End Web Development Nanodegree Program
 
 ### Links
 
-- Solution URL: [Solution](https://github.com/joey493/reactnd-project-would-you-rather)
+- Solution URL: [Solution](https://suspicious-boyd-a8a38d.netlify.app)
 - Live Site URL: [live Site](https://suspicious-boyd-a8a38d.netlify.app)
 
 ### Built with
