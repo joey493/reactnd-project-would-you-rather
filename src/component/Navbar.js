@@ -11,13 +11,14 @@ const Navbar = () => {
     const [show, setShow] = useState(false)
     const { user } = useSelector(({ currentUser }) => ({ user: currentUser ? currentUser : null }))
     const dispatch = useDispatch()
+    
     useEffect(() => {
         window.addEventListener('resize', 
             () => { if(window.innerWidth > 810) setShow(false)}
         )
     }, [])
 
-    const handleClick = () => setShow((prev) => setShow(!prev.show))
+    const handleClick = () => setShow((prev) => !prev)
     
     return (
         <header className='shadow-nav-sh'>
